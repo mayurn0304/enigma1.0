@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <!-- You can replace the text with your logo or an image -->
+                ScholarBridge
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Use the href attribute to specify the file path -->
+                        <a class="nav-link" href="C:\\Users\\Mayur\\Desktop\\front end\\login1.html">Signup</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="form d-flex align-items-center justify-content-center">
+        <form id="loginForm" onsubmit="submitForm(event)">
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            <div class="form-floating">
+                <!-- Add a dropdown for user role -->
+                <select class="form-select" id="userRole" required>
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                    <!-- Add more options as needed -->
+                </select>
+                <label for="userRole">Role</label>
+            </div>
+            
+            <div class="form-floating">
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                <label for="password">Password</label>
+            </div>
+            <button class="btn btn-primary w-100 py-2" type="submit" id="loginButton">Login</button>
+        </form>
+    </div>
+
+    <style>
+        /* Add your existing styles here */
+
+        body {
+            background: #2b0056;
+        }
+
+        .container {
+            max-width: 400px;
+        }
+
+        .form img {
+            display: block;
+            margin: auto;
+            width: 200px;
+            height: 200px; /* Adjust this value to your preferred height */
+        }
+
+        .form h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #8fa6bc;
+        }
+
+        .form label {
+            font-size: 14px;
+            color: #343a40;
+        }
+
+        .form-floating {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            height: 40px;
+        }
+
+        .dropdown {
+            margin-bottom: 15px;
+        }
+
+        .dropdown-toggle {
+            background-color: #6c757d;
+            color: #ffffff;
+            border: none;
+        }
+
+        .dropdown-menu {
+            background-color: #6c757d;
+        }
+
+        .dropdown-item {
+            color: #ffffff;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
+
+        .text-body-secondary {
+            color: #6c757d;
+        }
+    </style>
+
+    <script>
+        document.getElementById('loginButton').addEventListener('click', function (event) {
+            submitForm(event);
+        });
+
+        async function submitForm(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // You can add your logic to handle the username and password here
+            console.log('Username:', username);
+            console.log('Password:', password);
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

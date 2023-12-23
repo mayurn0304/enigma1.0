@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capture Attendance</title>
+</head>
+<body>
+    <h1>Capture Attendance</h1>
+    <form action="/capture_attendance" method="post">
+        <label for="class_id">Class ID:</label>
+        <input type="text" name="class_id" required>
+        <br>
+        <label for="student_id">Student ID:</label>
+        <input type="text" name="student_id" required>
+        <br>
+        <label for="status">Attendance Status:</label>
+        <select name="status" required>
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+        <br>
+        <button type="submit">Capture Attendance</button>
+    </form>
+</body>
+</html>

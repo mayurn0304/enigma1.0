@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Attendance System</title>
+</head>
+<body>
+
+<div class="container">
+    <button id="markAttendanceBtn">Mark Attendance</button>
+</div>
+
+<script>
+    document.getElementById("markAttendanceBtn").addEventListener("click", function () {
+    // Send a request to your server or directly interact with Google Sheets API here
+    markAttendanceBtn();
+});
+
+function markAttendanceBtn() {
+    // Replace 'YOUR_GOOGLE_FORM_URL' with the actual URL of your Google Form
+    var googleFormUrl = 'https://forms.gle/wtEEaNVkdMzCSEUZA';
+
+    // You can use the fetch API to send data to Google Form
+    fetch(googleFormUrl, {
+        method: 'POST',
+        mode: 'no-cors', // Cross-origin requests to Google Forms don't require CORS
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        // You may need to customize the data parameter based on your Google Form fields
+        body: 'entry.123456789=Attendance Marked', // Replace '123456789' with the actual entry ID
+    }).then(function () {
+        alert("Attendance marked successfully!");
+    }).catch(function (error) {
+        console.error('Error marking attendance:', error);
+        alert("Error marking attendance. Please try again.");
+    });
+}
+
+</script>
+</body>
+</html>
